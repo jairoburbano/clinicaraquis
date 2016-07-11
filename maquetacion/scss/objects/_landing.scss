@@ -1,0 +1,251 @@
+/*------------------------------------*\
+$LANDING
+\*------------------------------------*/
+.landing {
+    width: 100%;
+    min-height: 100vh;
+    background-image: url(../img/banner.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: -60px 130px;
+    position: relative;
+    color: #404041;
+    @include respond-to(tablet) {
+        background-position: 0;
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+    }
+    @include respond-to(desktop) {
+        justify-content: flex-end;
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background: #f1f0ea;
+        opacity: .8;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $level1;
+        @include respond-to(tablet) {
+            background: rgba(241,240,234,1);
+            background: -moz-linear-gradient(top, rgba(241,240,234,1) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,0) 100%);
+            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(241,240,234,1)), color-stop(50%, rgba(241,240,234,1)), color-stop(100%, rgba(241,240,234,0)));
+            background: -webkit-linear-gradient(top, rgba(241,240,234,1) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,0) 100%);
+            background: -o-linear-gradient(top, rgba(241,240,234,1) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,0) 100%);
+            background: -ms-linear-gradient(top, rgba(241,240,234,1) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,0) 100%);
+            background: linear-gradient(to bottom, rgba(241,240,234,1) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f0ea', endColorstr='#f1f0ea', GradientType=0 );
+        }
+        @include respond-to(desktop) {
+            width: 70%;
+            left: auto;
+            right: 0;
+            background: rgba(241,240,234,0);
+            background: -moz-linear-gradient(left, rgba(241,240,234,0) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,1) 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, rgba(241,240,234,0)), color-stop(50%, rgba(241,240,234,1)), color-stop(100%, rgba(241,240,234,1)));
+            background: -webkit-linear-gradient(left, rgba(241,240,234,0) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,1) 100%);
+            background: -o-linear-gradient(left, rgba(241,240,234,0) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,1) 100%);
+            background: -ms-linear-gradient(left, rgba(241,240,234,0) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,1) 100%);
+            background: linear-gradient(to right, rgba(241,240,234,0) 0%, rgba(241,240,234,1) 50%, rgba(241,240,234,1) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f1f0ea', endColorstr='#f1f0ea', GradientType=1 );
+        }
+    }
+}
+.error-404 {
+    min-height: calc(100vh - 67px);
+    @include respond-to(desktop) {
+        min-height: calc(100vh - 90px);
+    }
+    a {
+        border-bottom: none;
+    }
+}
+.landing__container {
+    width: 100%;
+    position: relative;
+    z-index: $level2;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column wrap;
+    align-items: center;
+    @include respond-to(desktop) {
+        width: 400px;
+        padding-right: 100px;
+        padding-top: 120px;
+    }
+}
+.landing__box {
+    @include respond-to(tablet) {
+        width: 300px;
+    }
+}
+.landing__title {
+    background: $main;
+    padding: 40px 0 30px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    margin-bottom: 70px;
+    width: 100%;
+    height: 140px;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: flex-start;
+        flex-flow: wrap row;
+        height: auto;
+        padding: 10px 0 10px 10px;
+        background-color: transparent;
+        border-top: 1px solid rgba(#404041, .2);
+        border-bottom: 1px solid rgba(#404041, .2);
+        margin-bottom: 40px;
+    }
+}
+.landing__title__icon {
+    width: 32px;
+    height: 32px;
+    margin: auto;
+    margin-bottom: 15px;
+    @include respond-to(desktop) {
+        margin: 0 20px 0 0;
+    }
+    .icon {
+        fill: #f1f0ea;
+        @include respond-to(desktop) {
+            fill: $main;
+        }
+    }
+}
+.landing__title__text {
+    width: 100%;
+    text-align: center;
+    @include font-size(18px, 22px);
+    text-transform: uppercase;
+    color: white;
+    span {
+        display: none;
+        @extend .light;
+        @include respond-to(desktop) {
+            display: block;
+            color: $principal;
+            @include font-size(15px, 25px);
+            text-transform: none;
+        }
+    }
+    @include respond-to(desktop) {
+        color: $main;
+        width: auto;
+        text-align: left;
+    }
+}
+.landing__content {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    @include respond-to(tablet) {
+        align-items: flex-start;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(#404041, .2);
+    }
+}
+.landing__logo {
+    width: 220px;
+    margin-bottom: 40px;
+    img {
+        width: 100%;
+        display: block;
+    }
+    @include respond-to(tablet) {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+}
+.landing__block {
+    width: 212px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-flow: row wrap;
+    margin-bottom: 35px;
+    @include respond-to(tablet) {
+        margin-bottom: 25px;
+        padding: 0 10px;
+        width: 232px;
+    }
+}
+.block--center {
+    align-items: center;
+    justify-content: flex-start;
+}
+.landing__phone__text {
+    width: calc(100% - 26px);
+    padding-left: 25px;
+    @include font-size(21px, 28px);
+    a {
+        color: #404041;
+    }
+    span {
+        @include font-size(15px, 20px);
+        display: block;
+        @extend .light;
+    }
+}
+.landing__icon {
+    width: 25px;
+    height: 25px;
+    svg {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+}
+.landing__reserva__text {
+    width: 150px;
+    height: 38px;
+    @include font-size(12px, 38px);
+    color: white;
+    background: $secundario;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 25px;
+}
+.landing__redes {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    margin: 35px 0 20px 0;
+    @include respond-to(tablet) {
+        margin: 100px 0 20px 0;
+    }
+    p {
+        @extend .light;
+        @include font-size(15px, 23px);
+    }
+    a {
+        @include font-size(12px, 23px);
+        height: 23px;
+        background: #25558e;
+        color: white;
+        text-decoration: none;
+        display: block;
+        width: 90px;
+        border-radius: 11.5px;
+        margin-left: 10px;
+        text-align: center;
+    }
+}
+.landing__footer {
+    width: 100%;
+    text-align: center;
+    p {
+        @include font-size(11px, 25px);
+        @extend .light;
+    }
+    strong {
+        @extend .bold;
+        color: $main;
+    }
+}

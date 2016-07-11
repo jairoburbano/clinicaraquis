@@ -1,0 +1,194 @@
+/*------------------------------------*\
+$GALLERY
+\*------------------------------------*/
+.gallery {
+    transition: all 300ms;
+    border: 1px solid $lightgray;
+    margin-bottom: 20px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    @include respond-to(tablet) {
+        width: 100%;
+        margin: 0 auto 20px;
+        position: relative;
+    }
+    &.fullscreen {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: 0;
+        z-index: 1300;
+        .slider__gallery {
+        }
+        .slides, .flex-viewport {
+            height: 100%;
+        }
+        .slides li {
+            height: 100vh;
+        }
+        .gallery__content {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            flex-flow: column-reverse wrap;
+            padding: 0 15px 15px 15px;
+        }
+        .gallery__text {
+            top: 12px;
+            padding: 0 90px 0 70px;
+        }
+    }
+}
+.gallery__fullscreen {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 54px;
+    height: 54px;
+    background: $darkgray;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    @include respond-to(desktop) {
+        display: flex;
+    }
+    img {
+        width: 38px;
+        height: 34px;
+    }
+}
+.content--gallery {
+    padding: 0 20px;
+}
+.slides {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0;
+    li {
+        position: relative;
+        padding-left: 0;
+        margin-bottom: 0;
+        background: $lightgray;
+        &::before {
+            display: none;
+        }
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+.gallery__content {
+    padding-left: 10px;
+    background: $lightgray;
+    position: relative;
+    transition: all 300ms;
+    overflow: hidden;
+}
+.custom-controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.flex-control-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    li a {
+        width: 10px;
+        height: 10px;
+        display: block;
+        border-radius: 50%;
+        background: $lightgray;
+        transition: all 300ms;
+        text-indent: 9999em;
+        margin: 0 3px;
+        .no-touch & {
+            &:hover {
+                background: $secundario;
+            }
+        }
+        &.flex-active {
+            background: $secundario;
+        }
+    }
+}
+.flex-direction-nav {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    height: 36px;
+    margin-bottom: 0;
+    li {
+        padding-left: 0;
+        &::before {
+            display: none;
+        }
+    }
+    li a {
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: $level3;
+        transition: all 300ms;
+        cursor: pointer;
+        border-bottom: none;
+        .no-touch & {
+            &:hover {
+                svg {
+                    fill: $principal;
+                }
+            }
+        }
+        svg {
+            width: 10px;
+            height: 18px;
+            fill: $darkgray;
+            transition: all 30ms;
+        }
+    }
+}
+.flex-prev {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.gallery__desc {
+    max-width: 650px;
+}
+.gallery__number {
+    height: 36px;
+    width: 60px;
+    line-height: cr(36px);
+    color: $principal;
+    span {
+        margin-right: 5px;
+    }
+    .total-slides {
+        color: $darkgray;
+    }
+}
+.gallery__text {
+    width: 100%;
+    padding: 0 0 10px 0;
+    @include respond-to(tablet) {
+        position: relative;
+        top: -25px;
+        padding: 0 70px 0 50px;
+        margin-bottom: -15px;
+    }
+    p {
+        font-size : 13px;
+        line-height : 18px;
+        letter-spacing : 0.26px;
+    }
+}

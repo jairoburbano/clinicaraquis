@@ -1,0 +1,28 @@
+{
+  "name": "clinicaraquis",
+  "version": "0.1.0",
+  "authors": [
+    "Agencia Digital Reactor <contacto@reactor.cl>"
+  ],
+  "description": "Descripción del tema",
+  "keywords": [
+    ""
+  ],
+  "license": "",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "jquery-validation": "^1.15.0",
+    "isotope": "^3.0.0",
+    "imagesloaded": "^4.1.0",
+    "flexslider": "^2.6.1"
+  }
+}

@@ -1,0 +1,161 @@
+/*------------------------------------*\
+$ESPECIALISTAS
+\*------------------------------------*/
+.wrap--especialista {
+    max-width: cr(940px)
+}
+.content--single {
+    @include respond-to(desktop) {
+        width: calc(100% - 360px);
+        margin-left: auto;
+        margin-right: 0;
+        padding-left: 40px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: $main;
+        margin-bottom: 20px;
+    }
+}
+.single--title {
+    @include respond-to(tablet) {
+        display: flex;
+        justify-content: center;
+        flex-flow: column wrap;
+        height: 290px;
+        position: relative;
+        margin: 40px 0;
+    }
+    @include respond-to(desktop) {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+    h1 {
+        @include respond-to(tablet) {
+            text-align: left;
+            @include font-size(30px, 40px);
+            letter-spacing : 0.6px;
+            padding: 15px 0 15px 50%;
+            &::after {
+                content: '';
+                width: 100%;
+                height: 1px;
+                background: $lightmain;
+                opacity: .5;
+                display: block;
+                margin-top: 10px;
+            }
+        }
+        @include respond-to(desktop) {
+            padding: 40px 0;
+            text-align: center;
+            &::after {
+                display: none;
+            }
+        }
+    }
+}
+.single__media {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    overflow: hidden;
+    margin-bottom: 25px;
+    @include respond-to(tablet) {
+        position: absolute;
+        width: 290px;
+        height: 290px;
+        top: 0;
+        left: 0;
+    }
+    @include respond-to(desktop) {
+        left: 70px;
+    }
+    img {
+        object-fit: cover;
+        width: 100%;
+    }
+}
+.cargo {
+    @include font-size(24px, 28px);
+    letter-spacing : 0.48px;
+    color: $main;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+        @include font-size(18px, 24px);
+        width: 100%;
+        padding-left: 50%;
+        margin-bottom: 0;
+    }
+    @include respond-to(desktop) {
+        padding-left: 400px;
+        margin-bottom: 15px;
+        @include font-size(24px, 28px);
+    }
+}
+.share {
+    border-bottom: 1px solid rgba($lightmain, .5);
+    padding-bottom: 20px;
+    .share__content {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 200px;
+        margin: auto;
+        @include respond-to(tablet) {
+            margin-right: 0;
+        }
+    }
+    p {
+        margin: 0 8px;
+    }
+    a {
+        max-width: 24px;
+        display: block;
+        border-bottom: none;
+        margin: 0 8px;
+        .no-touch & {
+            opacity: .5;
+            transition: all $time;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+    svg {
+        max-width: 100%;
+        max-height: 18px;
+        fill: $main;
+    }
+}
+.related {
+    .item__news {
+        &:last-of-type {
+            display: none;
+            @include respond-to(tablet) {
+                display: block;
+            }
+            @include respond-to(desktop) {
+                display: flex;
+            }
+        }
+    }
+    .item__centros {
+        display: none;
+        @include respond-to(tablet) {
+            display: block;
+        }
+        &:first-of-type {
+            display: block;
+        }
+        &:last-of-type {
+            display: none;
+            @include respond-to(desktop) {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,183 @@
+/*------------------------------------*\
+$FOOTER
+\*------------------------------------*/
+.footer {
+    position: relative;
+    background: $lightgray;
+    padding: 25px 15px 0;
+    margin-top: 20px;
+    @include respond-to(tablet) {
+        padding: 25px 25px 0;
+        margin-top: 45px;
+    }
+    @include respond-to(desktop) {
+        padding: 40px 25px 0;
+    }
+    &::after {
+        content: '';
+        height: 42px;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(176,83,36,0.1);
+        background: linear-gradient(to bottom, rgba(176,83,36,0.1) 0%, rgba(176,83,36,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b05324', endColorstr='#b05324', GradientType=0 );
+        @include respond-to(tablet) {
+            height: 78px;
+        }
+        @include respond-to(desktop) {
+            height: 40px;
+        }
+    }
+}
+.footer--top {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    align-items: center;
+    position: relative;
+    @include respond-to(tablet) {
+        flex-flow: row-reverse wrap;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    @include respond-to(desktop) {
+        flex-flow: row wrap;
+    }
+}
+.box__foo {
+}
+.redes--foo {
+    width: 160px;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    justify-content: space-between;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    @include respond-to(tablet) {
+        bottom: -40px;
+        left: 10px;
+        transform: translate(0, 0);
+    }
+    @include respond-to(desktop) {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        width: 330px;
+    }
+    a {
+        border-bottom: none;
+        border-bottom: 2px solid #f1f0ea;
+        .no-touch & {
+            &:hover {
+                border-bottom: 2px solid $main;
+            }
+        }
+    }
+    span {
+        display: none;
+        font-size : 15px;
+        line-height : 25px;
+        letter-spacing : 0.3px;
+        color: $main;
+        @extend .light;
+        @include respond-to(desktop) {
+            display: block;
+        }
+    }
+    svg {
+        width: 15px;
+        height: 15px;
+        fill: $main;
+        @include respond-to(desktop) {
+            display: none;
+        }
+    }
+}
+.logo--foo {
+    margin-bottom: 25px;
+    @include respond-to(tablet) {
+        margin-bottom: 0;
+    }
+    img {
+        width: 218px;
+        height: 58px;
+    }
+}
+.links--foo {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    font-style : italic;
+    font-size : 14px;
+    line-height : 24px;
+    letter-spacing : 0.28px;
+    @extend .light;
+    margin-bottom: 65px;
+    @include respond-to(tablet) {
+        width: 280px;
+        margin-bottom: 0;
+    }
+    a {
+        border-bottom: none;
+        color: $main;
+        border-bottom: 2px solid #f1f0ea;
+        .no-touch & {
+            &:hover {
+                border-bottom: 2px solid $main;
+            }
+        }
+    }
+    span {
+        color: $main;
+        @include respond-to(desktop) {
+            display: none;
+        }
+    }
+}
+.footer--bottom {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    padding: 12px 0;
+    @include respond-to(tablet) {
+        padding: 5px 0;
+        align-items: flex-end;
+    }
+    @include respond-to(desktop) {
+        padding: 12px 0;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+.reserved, .credits {
+    a {
+        border-bottom: none;
+        color: $darkgray;
+        .no-touch & {
+            &:hover {
+                .reactor {
+                    fill: #3dc4cc;
+                }
+            }
+        }
+    }
+    svg {
+        margin-left: 5px;
+    }
+    .reactor {
+        fill: #969696;
+        transition: all $time;
+    }
+    span {
+        color: $main;
+    }
+    color: $darkgray;
+    font-size : 11px;
+    line-height : 25px;
+    letter-spacing : 0.22px;
+}

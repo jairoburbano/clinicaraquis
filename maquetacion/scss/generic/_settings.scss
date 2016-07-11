@@ -1,0 +1,52 @@
+/*------------------------------------*\
+$SETTINGS
+\*------------------------------------*/
+$time : 300ms;
+
+/* ============== // Transition // ============== */
+
+$transition-time: .3s;
+$transition-method: ease-in-out;
+
+
+/* ============== // FONTS // ============== */
+@font-face {
+    font-family: 'allerbold';
+    src: url('../fonts/aller_bd-webfont.woff2') format('woff2'),
+        url('../fonts/aller_bd-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aller_lightregular';
+    src: url('../fonts/aller_lt-webfont.woff2') format('woff2'),
+        url('../fonts/aller_lt-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'allerregular';
+    src: url('../fonts/aller_rg-webfont.woff2') format('woff2'),
+        url('../fonts/aller_rg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.bold {
+    font-family: 'allerbold';
+    font-weight: normal;
+}
+.light {
+    font-family: 'aller_lightregular';
+    font-weight: normal;
+}
+/* ============== // FONTS // ============== */
+$principal : #1a1a1a;
+$main : #b05224;
+$lightmain : #c78565;
+$text : #404040;
+$darkgray : #5c5c60;
+$gray: #d2d2d2;
+$lightgray : #f1f0ea;
+$secundario : #5ac49e;
+$error : #8e2020;
+$cream : #d2c0ae;

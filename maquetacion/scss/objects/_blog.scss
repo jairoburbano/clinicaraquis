@@ -1,0 +1,194 @@
+/*------------------------------------*\
+$BLOG
+\*------------------------------------*/
+.wrap--blog {
+    padding: 0;
+    position: relative;
+}
+.wrap--single {
+    max-width: cr(900px);
+    margin: auto;
+}
+.wrap--single--small {
+    max-width: cr(630px);
+    margin: auto;
+    position: relative;
+}
+.blog__meta {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0 10px 0;
+    p, span, a {
+        @include font-size(12px, 14.4px);
+        color: $darkgray;
+        margin-bottom: 0;
+    }
+    span {
+        color: $gray;
+        margin: 0 3px;
+    }
+    a {
+        color: $secundario;
+        border-bottom-color: $secundario;
+    }
+}
+.blog__title {
+    font-size : 24px;
+    line-height : 28px;
+    letter-spacing : 0.48px;
+    text-align: center;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+        margin-bottom: 40px;
+    }
+    @include respond-to(desktop) {
+        @include font-size(40px, 40px);
+    }
+}
+.blog__bajada {
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+    }
+    @include respond-to(desktop) {
+        width: 100%;
+        margin-left: 0;
+    }
+    p {
+        font-size : 18px;
+        line-height : 30px;
+        letter-spacing : 0.36px;
+        color: $main;
+    }
+}
+.blog__media {
+    margin-bottom: 30px;
+    @include respond-to(tablet) {
+        width: calc(100% + 60px);
+        margin-left: -30px;
+    }
+    @include respond-to(desktop) {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+.blog__media__caption {
+    width: 100%;
+    display: block;
+    p {
+        text-align: right;
+        font-size : 13px;
+        line-height : 18px;
+        letter-spacing : 0.26px;
+        color: rgba($darkgray, .8);
+    }
+}
+.blog__doc {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+    position: relative;
+    @include respond-to(tablet) {
+        width: 225px;
+        margin-bottom: -50px;
+    }
+    @include respond-to(desktop) {
+        width: 90px;
+        flex-flow: column wrap;
+        margin-bottom: 0;
+        position: absolute;
+        top: 0;
+        left: -120px;
+    }
+}
+.doc__media {
+    width: 50%;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 25px;
+    @include respond-to(desktop) {
+        width: 90px;
+        padding-right: 0;
+        margin: auto;
+    }
+    img {
+        width: 90px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-left: auto;
+        margin-right: 0;
+    }
+}
+.doc__content {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    @include respond-to(desktop) {
+        width: 100%;
+        text-align: center;
+        padding-top: 5px;
+    }
+    &::after {
+        content: '';
+        width: 40px;
+        height: 2px;
+        background: $secundario;
+        @include respond-to(desktop) {
+            margin: auto;
+        }
+    }
+    span {
+        color: $gray;
+        font-style: italic;
+        @include respond-to(desktop) {
+            margin-bottom: 5px;
+        }
+    }
+    p {
+        color: $principal;
+        margin-bottom: 0;
+        font-size : 14px;
+        line-height : 18px;
+        letter-spacing : 0.28px;
+        margin-bottom: 10px;
+    }
+}
+.paginador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    margin-bottom: 0;
+    li {
+        color: $main;
+        @include font-size(21px, 20px);
+        padding: 0 5px;
+        margin-bottom: 0;
+        &::before {
+            display: none;
+        }
+    }
+    a {
+        @include font-size(21px, 20px);
+        border-bottom: none;
+        color: $gray;
+        transition: all $time;
+        &.current {
+            color: $main;
+        }
+        &.no-touch & {
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+    svg {
+        width: 10px;
+        height: 20px;
+        fill: $main;
+    }
+}

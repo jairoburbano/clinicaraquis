@@ -1,0 +1,14 @@
+.wrap {
+	margin: auto;
+	max-width: cr(1200px);
+    padding: 0 15px;
+    @include respond-to(tablet) {
+        padding: 0 60px;
+    }
+    @include respond-to(desktop) {
+        padding: 0 30px;
+    }
+    @include respond-to(wide) {
+        padding: 0;
+    }
+}

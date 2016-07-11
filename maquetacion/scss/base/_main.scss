@@ -1,0 +1,211 @@
+/*------------------------------------*\
+$MAIN
+\*------------------------------------*/
+html, body {
+    height: 100%;
+    font-family: 'allerregular';
+    color: $principal;
+}
+@include sticky(272px, page-wrap, footer);
+@include respond-to(tablet) {
+    @include sticky(142px, page-wrap, footer);
+}
+@include respond-to(desktop) {
+    @include sticky(146px, page-wrap, footer);
+}
+.page-404 {
+
+    @include sticky(0, page-wrap, footer);
+    @include respond-to(tablet) {
+        @include sticky(0, page-wrap, footer);
+    }
+    @include respond-to(desktop) {
+        @include sticky(0, page-wrap, footer);
+    }
+}
+.page-wrap {
+    padding-top: 67px;
+    @include respond-to(desktop) {
+        padding-top: 90px;
+    }
+}
+h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+h1 {
+    font-size : 30px;
+    line-height : 40px;
+    letter-spacing : 0.6px;
+    @extend .light;
+    @include respond-to(desktop) {
+        font-size : 40px;
+        line-height : 48px;
+        letter-spacing : 0.8px;
+    }
+    &.title {
+        @include font-size(30px, 40px);
+        letter-spacing : 0.8px;
+        color: $main;
+        padding: 20px 15px;
+        text-align: center;
+        width: 100%;
+        @include respond-to(tablet) {
+            @include font-size(40px, 40px);
+            padding: 40px 0;
+        }
+    }
+}
+h2 {
+    font-size : 18px;
+    line-height : 24px;
+    letter-spacing : 0.36px;
+    @include respond-to(desktop) {
+        font-size : 24px;
+        line-height : 28px;
+        letter-spacing : 0.48px;
+    }
+    &.small {
+        padding: 30px 0;
+        text-align: center;
+        width: 100%;
+        @include respond-to(desktop) {
+            font-size : 18px;
+            line-height : 24px;
+            letter-spacing : 0.36px;
+        }
+    }
+}
+h3 {
+    font-size : 21px;
+    line-height : 28px;
+    letter-spacing : 0.42px;
+}
+h4 {
+    font-size : 21px;
+    line-height : 28px;
+    letter-spacing : 0.42px;
+}
+h5 {
+    font-size : 18px;
+    line-height : 24px;
+    letter-spacing : 0.36px;
+}
+h6 {
+    font-size : 18px;
+    line-height : 24px;
+    letter-spacing : 0.36px;
+}
+p {
+    font-size : 15px;
+    line-height : 25px;
+    letter-spacing : 0.3px;
+    color: $text;
+    margin-bottom: 20px;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+a {
+    color: $principal;
+    text-decoration: none;
+    border-bottom: 2px solid $main;
+    transition: all $time;
+    .no-touch & {
+        &:hover {
+            color: $main;
+        }
+    }
+}
+strong, b {
+    @extend .bold;
+    color: $principal;
+}
+ul, ol {
+    font-size : 16px;
+    line-height : 20px;
+    letter-spacing : 0.32px;
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 20px;
+    li {
+        padding-left: 15px;
+        position: relative;
+        margin-bottom: 15px;
+    }
+    ol li {
+        padding-left: 30px;
+    }
+    ol, ul {
+        margin-bottom: 0;
+    }
+}
+ul > li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 5px;
+    height: 5px;
+    background: $main;
+    border-radius: 50%;
+}
+ol {
+    counter-reset: numbers;
+    > li {
+        &::before {
+            content: counters(numbers,".")' ';
+            counter-increment: numbers;
+            position: absolute;
+            left: 0;
+            top: 0px;
+            color: $main;
+        }
+    }
+}
+blockquote {
+    width: 100%;
+    position: relative;
+    text-align: right;
+    color: $gray;
+    font-size : 22px;
+    line-height : 24px;
+    letter-spacing : 0.44px;
+    padding: 10px 60px 10px 10px;
+    &::before {
+        content: '';
+        display: block;
+        margin: auto;
+        width: 40px;
+        height: 30px;
+        background: url(../img/icon-blockquote.svg) no-repeat;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -20px;
+    }
+}
+svg {
+    fill: $gray;
+}
+img {
+    max-width: 100%;
+    object-fit: contain;
+}
+.content {
+    margin-bottom: 20px;
+    color: $text;
+}
+.content * {
+    color: $text;
+}
+.content--small {
+    max-width: 580px;
+    margin: auto;
+}
+.content--small--wide {
+    max-width: 750px;
+    margin: auto;
+}
+.text-center {
+    text-align: center;
+}

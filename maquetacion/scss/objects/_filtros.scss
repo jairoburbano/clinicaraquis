@@ -1,0 +1,156 @@
+/*------------------------------------*\
+$FILTROS
+\*------------------------------------*/
+.filtros, .filters {
+    position: relative;
+    background: $lightmain;
+    height: 34px;
+    @include respond-to(tablet) {
+        height: 46px;
+    }
+    &::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 10px 6px 0 6px;
+        border-color: $main transparent transparent transparent;
+        position: absolute;
+        top: 12px;
+        right: 10px;
+        @include respond-to(tablet) {
+            display: none;
+        }
+    }
+}
+.filtros {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 67px;
+    z-index: $level10;
+    @include respond-to(desktop) {
+        top: 90px;
+    }
+}
+.filtros--fixed {
+    top: 60px;
+}
+.filters {
+    @include respond-to(tablet) {
+        background-color: transparent;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        max-width: cr(1200px);
+        height: 60px;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 30px;
+        padding: 0 30px;
+    }
+    @include respond-to(desktop) {
+        padding: 0;
+    }
+    p {
+        display: none;
+        @include respond-to(desktop) {
+            display: block;
+            color: $darkgray;
+            @include font-size(12px, 60px);
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+    }
+    .filters__select {
+        position: relative;
+        @include respond-to(tablet) {
+            &::after {
+                content: '';
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 6px 4px 0 4px;
+                border-color: $gray transparent transparent transparent;
+                position: absolute;
+                top: 14px;
+                right: 10px;
+            }
+        }
+    }
+    select {
+        width: 100%;
+        height: 34px;
+        border-radius: 0;
+        border: none;
+        padding: 0 25px 0 10px;
+        background-color: transparent;
+        color: white;
+        line-height: cr(34px);
+        position: relative;
+        z-index: $level1;
+        @extend .light;
+        font-style: italic;
+        @include respond-to(tablet) {
+            color: $main;
+            border: 1px solid $lightmain;
+            border-radius: 4px;
+            font-size: cr(15px);
+            padding: 0 25px 0 5px;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+}
+.filtros--select {
+    width: 100%;
+    height: 34px;
+    border-radius: 0;
+    border: none;
+    padding: 0 25px 0 10px;
+    background-color: transparent;
+    color: white;
+    line-height: cr(34px);
+    position: relative;
+    z-index: $level1;
+    &:focus {
+        outline: none;
+    }
+}
+.filtros__group {
+    display: flex;
+    justify-content: space-around;
+    button {
+        width: 100%;
+        text-align: center;
+        font-size : 15px;
+        line-height : 46px;
+        letter-spacing : 0.3px;
+        color: white;
+        @extend .light;
+        display: block;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        transition: all $time;
+        @include respond-to(tablet) {
+            max-width: 33.333%;
+        }
+        @include respond-to(desktop) {
+            max-width: 300px;
+        }
+        &.active {
+            background: $main;
+        }
+        &:focus {
+            outline: none;
+        }
+        .no-touch & {
+            &:hover {
+                background: $main;
+            }
+        }
+    }
+}

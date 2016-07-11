@@ -1,0 +1,31 @@
+/*------------------------------------*\
+$CONVENIO
+\*------------------------------------*/
+.container--column {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    @include respond-to(tablet) {
+        padding-top: 30px;
+    }
+    @include respond-to(desktop) {
+        padding-top: 40px;
+    }
+}
+.item--column {
+    width: calc(50% - 15px);
+    height: 70px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    @include respond-to(tablet) {
+        width: 25%;
+        padding: 0 15px;
+    }
+    @include respond-to(desktop) {
+        padding: 0 30px;
+    }
+    img {
+        display: block;
+    }
+}

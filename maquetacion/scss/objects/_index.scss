@@ -1,0 +1,223 @@
+/*------------------------------------*\
+$INDEX
+\*------------------------------------*/
+.home--block {
+    position: relative;
+    margin-bottom: 20px;
+}
+.item--home {
+    padding-top: 20px;
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.wrap--destacado {
+    @include respond-to(tablet) {
+        padding: 40px 30px 0;
+    }
+    @include respond-to(desktop) {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        padding: 40px 0 0;
+    }
+}
+.destacado--home {
+    width: calc(100% + 30px);
+    margin-left: -15px;
+    position: relative;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+        width: 100%;
+        margin-left: 0;
+    }
+    @include respond-to(desktop) {
+        width: calc(100% - 300px);
+        margin-bottom: 0;
+    }
+    .title {
+        padding: 0 0 20px;
+        text-align: left;
+        @include respond-to(tablet) {
+            color: white;
+            margin: 0;
+            padding: 0 0 40px;
+        }
+    }
+    .btn {
+        @include respond-to(tablet) {
+            color: white;
+            border-color: white;
+        }
+        .no-touch & {
+            &:hover {
+                background: white;
+                border-color: white;
+                color: $principal;
+            }
+        }
+    }
+}
+.destacado--home__media {
+    width: 100%;
+    height: 180px;
+    background-size: cover;
+    background-position: center;
+    @include respond-to(tablet) {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: $level1;
+    }
+    &::after {
+        @include respond-to(tablet) {
+            content: '';
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: rgba(0,0,0,0.6);
+            background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(176,83,36,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#b05324', GradientType=1 );
+        }
+    }
+}
+.destacado--home__container {
+    position: relative;
+    z-index: $level2;
+    padding: 25px 15px;
+    @include respond-to(tablet) {
+        padding: 45px 25px;
+    }
+}
+.destacado--home__content {
+    max-width: 540px;
+    margin-bottom: 20px;
+    p {
+        font-size : 15px;
+        line-height : 25px;
+        letter-spacing : 0.3px;
+        @extend .light;
+        color: $text;
+        @include respond-to(tablet) {
+            color: white;
+            text-align: left;
+        }
+    }
+}
+.reserva {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 150px;
+    border-bottom: none;
+    @include respond-to(tablet) {
+        height: 150px;
+    }
+    @include respond-to(desktop) {
+        width: 285px;
+        height: 340px;
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: $level1;
+        background: $main;
+        opacity: .8;
+    }
+    p {
+        text-align: center;
+        width: 210px;
+        position: relative;
+        z-index: $level2;
+        font-size : 40px;
+        line-height : 37px;
+        letter-spacing : 0.8px;
+        color: white;
+    }
+}
+.quiro--home {
+    display: flex;
+    justify-content: flex-start;
+    max-width: cr(1100px);
+    .container {
+        @include respond-to(desktop) {
+            width: 50%;
+            .content {
+                padding-right: 120px;
+            }
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-flow: row wrap;
+            text-align: center;
+            @include respond-to(desktop) {
+                display: block;
+                text-align: left;
+            }
+        }
+    }
+    .title {
+        @include respond-to(desktop) {
+            text-align: left;
+        }
+    }
+}
+.content--columna {
+    display: none;
+    width: 50%;
+    @include respond-to(desktop) {
+        display: flex;
+    }
+}
+.banner--home {
+    width: 100%;
+    padding: 40px 0;
+    background: $principal;
+    position: relative;
+    @include respond-to(tablet) {
+        padding: 70px 0 120px;
+    }
+}
+.banner--home__media {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .6;
+    background-size: cover;
+    background-position: center;
+    z-index: $level1;
+    background-attachment: fixed;
+}
+.banner--home__content {
+    position: relative;
+    z-index: $level2;
+    text-align: center;
+    svg {
+        margin: 0 auto 20px;
+    }
+    p {
+        @include font-size(40px, 40px);
+        letter-spacing : 0.8px;
+        color: white;
+        padding: 0 40px;
+    }
+    .btn {
+        margin: auto;
+    }
+}

@@ -1,0 +1,179 @@
+/*------------------------------------*\
+$BTN
+\*------------------------------------*/
+.btn__group {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    &.btn__group--big {
+        .btn {
+            max-width: 210px;
+            @include respond-to(tablet) {
+                max-width: 300px;
+            }
+        }
+        &::before {
+            width: 30px;
+            margin-left: (-30px - 120px);
+            @include respond-to(tablet) {
+                width: 95px;
+                margin-left: (-95px - 170px);
+            }
+        }
+        &::after {
+            width: 30px;
+            margin-left: 120px;
+            @include respond-to(tablet) {
+                width: 95px;
+                margin-left: 170px;
+            }
+        }
+    }
+    &.btn__group--small {
+        &::before {
+            margin-left: (-40px - 90px);
+            @include respond-to(tablet) {
+                margin-left: (-95px - 100px);
+            }
+        }
+        &::after {
+            margin-left: 90px;
+            @include respond-to(tablet) {
+                margin-left: 100px;
+            }
+        }
+    }
+    &::before, &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        height: 1px;
+        left: 50%;
+        background: $lightmain;
+        margin-left: (-40px - 110px);
+        width: 40px;
+        @include respond-to(tablet) {
+            margin-left: (-95px - 120px);
+            width: 95px;
+        }
+    }
+    &::after {
+        margin-left: 110px;
+        @include respond-to(tablet) {
+            margin-left: 120px;
+        }
+    }
+}
+.btn {
+    display: block;
+    border-bottom: none;
+    padding: 0;
+}
+.btn--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    svg {
+        width: 10px;
+        height: 17px;
+        fill: white;
+        margin-right: 5px;
+    }
+}
+.btn--border {
+    @include font-size(12px, 32px);
+    color: $secundario;
+    height: 36px;
+    padding: 0 40px;
+    text-align: center;
+    position: relative;
+    border: 2px solid $secundario;
+    transition: all $time;
+    border-radius: 18px;
+    display: table;
+    .no-touch & {
+        &:hover {
+            background: $secundario;
+            color: white;
+            &.btn--disabled {
+                background-color: transparent;
+                color: $secundario;
+            }
+        }
+    }
+}
+.btn--cat {
+    height: 24px;
+    padding: 0 20px;
+    display: table;
+    border-radius: 12px;
+    @include font-size(12px, 20px);
+    color: white;
+    background: $cream;
+    text-align: center;
+    border: 2px solid $cream;
+    transition: all $time;
+    .no-touch & {
+        &:hover {
+            color: white;
+            border: 2px solid darken($cream, 20);
+            background-color: darken($cream, 20);
+        }
+    }
+}
+.btn--more, .btn--send {
+    @include font-size(14px, 16px);
+    color: white;
+    background: $lightmain;
+    height: 36px;
+    padding: 0 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    transition: all $time;
+    border-radius: 18px;
+    .no-touch & {
+        &:hover {
+            background: $main;
+            color: white;
+            &.btn--disabled {
+                background: $lightmain;
+                color: white;
+            }
+        }
+    }
+}
+.btn--disabled {
+    opacity: .2;
+    cursor: not-allowed;
+}
+.btn--send {
+    border: none;
+}
+.btn--back {
+    width: 100%;
+    border: 1px solid $main;
+    color: $main;
+    text-align: center;
+    height: 50px;
+    font-size : 14px;
+    line-height : 48px;
+    letter-spacing : 0.28px;
+    @extend .bold;
+    display: block;
+    max-width: 700px;
+    margin: auto;
+    @include respond-to(tablet) {
+        margin-top: 20px;
+    }
+    .no-touch & {
+        transition: all $time;
+        &:hover {
+            background: $main;
+            color: white;
+        }
+    }
+}

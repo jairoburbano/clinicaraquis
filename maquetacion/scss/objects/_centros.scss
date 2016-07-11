@@ -1,0 +1,225 @@
+/*------------------------------------*\
+$CENTROS
+\*------------------------------------*/
+.wrap--single--centros {
+    padding-top: 34px;
+    @include respond-to(tablet) {
+        padding-top: 46px;
+    }
+}
+.container--centros {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    position: relative;
+}
+.loader {
+    width: 100%;
+    display: none;
+    img {
+        display: block;
+        margin: auto;
+        width: 100px;
+    }
+}
+.loading {
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .8;
+    }
+}
+.item__centros {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    @include respond-to(tablet) {
+        width: 50%;
+        margin-bottom: 40px;
+    }
+    @include respond-to(desktop) {
+        width: 33.333%;
+    }
+    p {
+        color: $main;
+        max-width: 260px;
+        margin: 0 auto 10px;
+    }
+    h4 {
+        max-width: 260px;
+        margin: 0 auto 10px;
+    }
+    .btn {
+        margin: auto;
+    }
+}
+.item__centros__media {
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 15px;
+    border-bottom: none;
+}
+.banner {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    margin-top: 15px;
+    @include respond-to(tablet) {
+        margin: 0 0 20px 0;
+    }
+    img {
+        width: 100%;
+    }
+}
+.banner--dest {
+    width: 100%;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+    @include respond-to(tablet) {
+        width: 70%;
+        height: 360px;
+    }
+    @include respond-to(desktop) {
+        width: 60%;
+        height: 480px;
+    }
+    @include respond-to(wide) {
+        height: 700px;
+    }
+    img {
+        object-fit: cover;
+    }
+}
+.banner__image {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    height: 90px;
+    @include respond-to(tablet) {
+        width: 30%;
+        height: 360px;
+    }
+    @include respond-to(desktop) {
+        width: 40%;
+        height: 480px;
+    }
+    @include respond-to(wide) {
+        height: 700px;
+    }
+}
+.banner__media {
+    height: 90px;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    @include respond-to(tablet) {
+        width: 100%;
+        height: 120px;
+    }
+    @include respond-to(desktop) {
+        width: 50%;
+        height: 160px;
+    }
+    @include respond-to(wide) {
+        height: 240px;
+    }
+    &:first-of-type {
+        @include respond-to(desktop) {
+            width: 100%;
+            height: 320px;
+        }
+        @include respond-to(wide) {
+            height: 460px;
+        }
+    }
+    &:last-of-type {
+        display: none;
+        @include respond-to(tablet) {
+            display: flex;
+        }
+    }
+    img {
+        object-fit: cover;
+    }
+}
+.reverse-column {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    @include respond-to(tablet) {
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+}
+.centro-mapa {
+    position: relative;
+    padding-top: 74px;
+    @include respond-to(tablet) {
+        padding-top: 30px;
+    }
+    &::after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: $lightmain;
+        opacity: .5;
+        margin-top: 25px;
+        @include respond-to(tablet) {
+            margin-top: 40px;
+        }
+    }
+    .btn {
+        margin: 0 7px;
+    }
+    .btn--abs {
+        position: absolute;
+        left: 50%;
+        top: 20px;
+        transform: translate(-50%, 0);
+        width: 200px;
+        @include respond-to(tablet) {
+            position: relative;
+            top: auto;
+            left: auto;
+            width: auto;
+            transform: translate(0, 0);
+        }
+    }
+    .btn--icon {
+        position: relative;
+        top: -18px;
+        z-index: $level1;
+        width: 200px;
+        margin: auto;
+        @include respond-to(tablet) {
+            width: auto;
+            top: auto;
+            margin: 0 7px;
+        }
+    }
+}
+#map {
+    width: 100%;
+    height: 290px;
+    @include respond-to(tablet) {
+        margin-top: 30px;
+        height: 390px;
+    }
+}
+.centro__message {
+    display: none;
+    width: 100%;
+    padding: 20px 15px;
+    text-align: center;
+    p {
+        @include font-size(18px, 24px);
+        color: $main;
+    }
+}

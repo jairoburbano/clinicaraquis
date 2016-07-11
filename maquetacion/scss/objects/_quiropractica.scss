@@ -1,0 +1,15 @@
+/*------------------------------------*\
+$QUIROPRACTICA
+\*------------------------------------*/
+.content--quiro {
+    max-width: 630px;
+    margin: auto;
+    strong {
+        @extend .bold;
+        color: $main;
+    }
+    img {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}

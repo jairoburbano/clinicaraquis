@@ -1,0 +1,201 @@
+/*------------------------------------*\
+$FORM
+\*------------------------------------*/
+.contact-form {
+    .content {
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            margin-bottom: 40px;
+        }
+    }
+}
+.formulario {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    .input-group {
+        position: relative;
+        margin-bottom: 30px;
+        width: 100%;
+        @include respond-to(tablet) {
+            width: 50%;
+            padding: 0 10px;
+        }
+        @include respond-to(desktop) {
+            width: 33.333%;
+        }
+        &::after {
+            right: 0;
+            transition: all $time;
+            @include respond-to(tablet) {
+                right: 10px;
+            } 
+        }
+        &.focus {
+            label {
+                opacity: 1;
+            }
+            input, select, textarea {
+                border: 2px solid $lightmain;
+            }
+        }
+        &.normal--group {
+            &.valid {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    height: 36px;
+                    width: 38px;
+                    border-bottom-right-radius: 3px;
+                    border-top-right-radius: 3px;
+                    background: url(../img/icon-valid.svg) no-repeat center $secundario;
+                }
+            }
+            &.error {
+                &::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    height: 36px;
+                    width: 38px;
+                    border-bottom-right-radius: 3px;
+                    border-top-right-radius: 3px;
+                    background: url(../img/icon-error.svg) no-repeat center $error;
+                }
+            }
+        }
+        &.select--group {
+            input {
+                border: 2px solid $lightmain;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                height: 36px;
+                width: 38px;
+                border-bottom-right-radius: 3px;
+                border-top-right-radius: 3px;
+                background: url(../img/icon-select.svg) no-repeat center $lightmain;
+            } 
+            &.valid {
+                &::after {
+                    background-color: $secundario;
+                }
+            }
+            &.error {
+                &::after {
+                    background-color: $error;
+                }
+            }
+        }
+        &.valid {
+            input, select, textarea {
+                border: 2px solid $secundario;
+                padding-right: 46px;
+            }
+        }
+        &.error {
+            input, select, textarea {
+                border: 2px solid $error;
+                color: $error;
+                padding-right: 46px;
+            }
+            p.error {
+                @include font-size(12px, 14.4px);
+                color: $error;
+                position: absolute;
+                right: 0;
+                bottom: -18px;
+                @include respond-to(tablet) {
+                    right: 10px;
+                }
+            }
+        }
+        label {
+            font-size : 16px;
+            line-height : 20px;
+            letter-spacing : 0.32px;
+            vertical-align: top;
+            margin-bottom: 6px;
+            opacity: .5;
+            transition: all $time;
+            padding-left: 10px;
+        }
+        input, select, textarea {
+            width: 100%;
+            border-radius: 3px;
+            border: 1px solid $lightmain;
+            height: 36px;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 8px 10px;
+            position: relative;
+            z-index: $level1;
+            transition: border-color $time;
+            background-color: transparent;
+            &:focus {
+                outline: none;
+            }
+        }
+        select {
+            min-height: 100%;
+            min-width: 100%;
+            padding: 0 46px 0 10px;
+        }
+        textarea {
+            resize: none;
+            height: 100px;
+        }
+    }
+    .textarea--group {
+        margin-bottom: 20px;
+        @include respond-to(tablet) {
+            width: 100%;
+            margin-bottom: 30px;
+        }
+        @include respond-to(desktop) {
+            width: 66.666%;
+        }
+    }
+    .message {
+        width: 100%;
+        max-width: 480px;
+        border: 2px dashed $secundario;
+        text-align: center;
+        padding: 20px;
+        @include font-size(16px, 20px);
+        color: $darkgray;
+        border-radius: 3px;
+        margin-top: 25px;
+        display: none;
+        @include respond-to(tablet) {
+            margin-top: 0;
+            position: absolute;
+            bottom: -20px;
+            left: 10px;
+        }
+        @include respond-to(desktop) {
+            left: calc(33.333% + 10px);
+        }
+        &.msg-error {
+            border-color: $error;
+        }
+    }
+    .send-group {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        @include respond-to(tablet) {
+            padding: 0 10px;
+        }
+    }
+}
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+}

@@ -1,0 +1,62 @@
+/*------------------------------------*\
+$PREGUNTAS
+\*------------------------------------*/
+.expand {
+    max-width: 700px;
+    width: 100%;
+    border-bottom: 1px solid rgba($lightmain, .5);
+    margin: 0 auto 25px;
+    padding-bottom: 25px;
+    @include respond-to(tablet) {
+        padding: 0 25px 25px 25px;
+    }
+}
+.expand--open {
+    .expand__title {
+        h6 {
+            color: $main;
+        }
+        .icon-hide {
+            opacity: 0;
+        }
+        .expand__icon {
+            opacity: .5;
+        }
+    }
+}
+.expand__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-flow: row wrap;
+    cursor: pointer;
+    h6 {
+        width: calc(100% - 34px);
+        padding-right: 10px;
+        transition: all $time;
+    }
+    .icon-hide {
+        transition: all $time;
+    }
+}
+.expand__icon {
+    width: 34px;
+    height: 34px;
+    border: 2px solid $main;
+    border-radius: 50%;
+    position: relative;
+    display: block;
+    transition: all $time;
+    svg {
+        position: absolute;
+        left: -2px;
+        top: -2px;
+    }
+}
+.expand__content {
+    margin-top: 25px;
+    display: none;
+    @include respond-to(tablet) {
+        padding-right: 100px;
+    }
+}
